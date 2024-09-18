@@ -1,10 +1,10 @@
 import React from 'react';
+import image from '../assets/section.png';  
 
 function Home() {
   return (
-    <div>
-      <h1>Bienvenue sur la page d'accueil</h1>
-      <p>Ceci est la page principale de l'application.</p>
+    <div className="home-container">
+      <img src={image} alt="Description de l'image" className="home-image" />
     </div>
   );
 }
