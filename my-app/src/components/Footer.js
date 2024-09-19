@@ -1,9 +1,11 @@
 import React from 'react';
+import logo from '../assets/logo2.png'; 
 
 function Footer() {
   return (
-    <footer>
-      <p>© 2024 - Mon Application React</p>
+    <footer className="footer">
+      <img src={logo} alt="Mon logo" className="footer-logo" />
+      <p>© 2020 Kasa. All rights reserved</p>
     </footer>
   );
 }

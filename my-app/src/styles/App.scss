@@ -7,6 +7,8 @@
   }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 .banner {
   display: flex;
   align-items: center;
@@ -45,5 +47,96 @@
     height: auto;
     max-width: 900px; 
     border-radius: 10px; 
+  }
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 40px 0;  // Augmenter la hauteur en ajustant le padding
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+
+  .footer-logo {
+    width: 100px;  // Réduction de la taille du logo
+    margin-bottom: 20px;  // Espace entre le logo et le texte ajusté
+  }
+
+  p {
+    margin: 0;
+    font-size: 14px;
+  }
+}
+
+.about-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.about-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+// Styles pour About et Collapse
+.about-container {
+  text-align: center;
+  padding: 20px;
+  
+  .about-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+}
+
+// Styles pour About et Collapse
+.about-container {
+  text-align: center;
+  padding: 20px;
+
+  .about-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+}
+
+.collapse-container {
+  margin-bottom: 10px;
+  max-width: 900px; 
+  margin-left: auto;  
+  margin-right: auto;  
+  font-family: 'Montserrat', sans-serif;
+}
+
+.collapse-header {
+  background-color: #ff6f61;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+}
+
+.collapse-content {
+  padding: 10px 20px;
+  
+  color: #333;
+
+  p {
+    margin: 0;
   }
 }

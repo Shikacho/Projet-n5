@@ -5,31 +5,35 @@ import Banner from './Banner';
 import Home from './Home';
 import Card from './Card';
 import data from './data.json';
+import About from './About';  
 
 function Layout({ children }) {
-  const location = useLocation();  // Utilisation de useLocation pour détecter la route active
+  const location = useLocation();
 
   return (
     <div>
       <Banner />
 
-      {location.pathname !== '/about' && <Home />}
-
-
-      {/* Affichage des cartes uniquement si on n'est pas sur la page About */}
-      {location.pathname !== '/about' && (
-        <div className="card-container">
-          {data.map(item => (
-            <Card 
-              key={item.id}
-              title={item.title}
-              cover={item.cover}
-            />
-          ))}
-        </div>
+      
+      {location.pathname === '/about' ? (
+        <About />
+      ) : (
+        <>
+          <Home />
+          
+          <div className="card-container">
+            {data.map(item => (
+              <Card 
+                key={item.id}
+                title={item.title}
+                cover={item.cover}
+              />
+            ))}
+          </div>
+        </>
       )}
 
-      {/* Affichage du contenu des autres pages */}
+      
       {children}
 
       <Footer />
