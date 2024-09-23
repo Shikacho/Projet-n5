@@ -37,6 +37,17 @@
     margin: 0;
     padding: 0;
     border-radius: 0;
-    cursor: default;
+    cursor: pointer;
+    text-decoration: underline; /* Laisse le soulignement visible */
+    text-decoration-color: white; /* Change la couleur du soulignement en blanc */
+  
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: white; /* Garde la couleur blanche dans tous les états */
+      text-decoration: underline;
+      text-decoration-color: white; /* Soulignement blanc dans tous les états */
+    }
   }
 }

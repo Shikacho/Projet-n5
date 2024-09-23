@@ -100,11 +100,11 @@
 }
 
 .collapse-arrow {
-  transition: transform 0.3s ease; /* Transition fluide */
+  transition: transform 0.3s ease;
 }
 
 .collapse-container.dropdown-open .collapse-arrow {
-  transform: rotate(180deg); /* Rotation de 180° lorsque c'est ouvert */
+  transform: rotate(180deg); 
 }
 
 .collapse-content {

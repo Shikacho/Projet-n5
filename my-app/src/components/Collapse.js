@@ -13,7 +13,6 @@ function Collapse({ title, children }) {
       <div className="collapse-header" onClick={toggleCollapse}>
         <h2>{title}</h2>
         <span className="collapse-arrow">
-          
           <img src={arrowIcon} alt={isOpen ? "Fermer" : "Ouvrir"} width="24" height="24" />
         </span>
       </div>
