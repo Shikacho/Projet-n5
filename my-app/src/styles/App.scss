@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 .banner {
@@ -77,11 +76,14 @@
 }
 
 .collapse-container {
-  margin-bottom: 10px;
-  max-width: 900px; 
-  margin-left: auto;  
-  margin-right: auto;  
+  margin-bottom: 5px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .collapse-header {
@@ -92,6 +94,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 5px;
 
   h2 {
     margin: 0;
@@ -99,20 +102,28 @@
   }
 }
 
-.collapse-arrow {
+.collapse-arrow img {
+  transform: rotate(0deg);
   transition: transform 0.3s ease;
 }
 
-.collapse-container.dropdown-open .collapse-arrow {
-  transform: rotate(180deg); 
+.dropdown-open .collapse-arrow img {
+  transform: rotate(180deg);
 }
 
 .collapse-content {
-  padding: 10px 20px;
-  
-  color: #333;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  padding: 0 20px;
+}
 
-  p {
-    margin: 0;
-  }
+.collapse-content.open {
+  max-height: 500px;
+  padding: 10px 20px;
+}
+
+.collapse-content p {
+  margin: 0;
+  color: #333;
 }

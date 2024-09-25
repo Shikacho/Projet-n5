@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import data from '../data/data.json';
-import Collapse from './Collapse';
+import arrowIcon from '../assets/arrow_down.png'; 
 import '../styles/Slideshow.scss';
 
 function Slideshow() {
   const { id } = useParams();
   const item = data.find(item => item.id === id);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
+  const [isEquipmentsOpen, setIsEquipmentsOpen] = useState(false);
 
   if (!item) {
     return <div>Item not found</div>;
@@ -21,9 +23,7 @@ function Slideshow() {
   };
 
   const prevSlide = () => {
-    setCurrentImageIndex(
-      (currentImageIndex - 1 + totalImages) % totalImages
-    );
+    setCurrentImageIndex((currentImageIndex - 1 + totalImages) % totalImages);
   };
 
   const renderStars = () => {
@@ -39,13 +39,13 @@ function Slideshow() {
 
   return (
     <div className="slideshow-container">
+      
       <div className="slideshow-image-container">
         <img 
           src={pictures[currentImageIndex]} 
           alt={`Slide ${currentImageIndex + 1}`} 
           className="slideshow-image" 
         />
-
         {totalImages > 1 && (
           <>
             <button className="prev" onClick={prevSlide}>‹</button>
@@ -62,36 +62,49 @@ function Slideshow() {
         <div className="host">
           <div className="host-info">
             <p className="host-name">{item.host.name}</p>
-            <div className="rating">{renderStars()}</div> 
+            <div className="rating">{renderStars()}</div>
           </div>
           <img src={item.host.picture} alt={item.host.name} className="host-picture" />
         </div>
       </div>
 
-     
       <div className="location">{item.location}</div>
 
-      
       <div className="tags">
         {item.tags.map((tag, index) => (
           <span key={index} className="tag">{tag}</span>
         ))}
       </div>
 
-      
-      <div className="collapse-container">
-        <Collapse title="Description">
-          <p>{item.description}</p>
-        </Collapse>
-
+      <div className="slideshow-collapse-container">
        
-        <Collapse title="Équipements">
-          <ul className="equipments-list">
-            {item.equipments.map((equipment, index) => (
-              <li key={index}>{equipment}</li>
-            ))}
-          </ul>
-        </Collapse>
+        <div className={`slideshow-collapse ${isDescriptionOpen ? 'open' : ''}`}>
+          <div className="slideshow-collapse-header" onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}>
+            <span>Description</span>
+            <span className="slideshow-collapse-arrow">
+              <img src={arrowIcon} alt="Ouvrir" width="24" height="24" /> 
+            </span>
+          </div>
+          <div className="slideshow-collapse-content">
+            <p>{item.description}</p>
+          </div>
+        </div>
+
+        <div className={`slideshow-collapse ${isEquipmentsOpen ? 'open' : ''}`}>
+          <div className="slideshow-collapse-header" onClick={() => setIsEquipmentsOpen(!isEquipmentsOpen)}>
+            <span>Équipements</span>
+            <span className="slideshow-collapse-arrow">
+              <img src={arrowIcon} alt="Ouvrir" width="24" height="24" /> 
+            </span>
+          </div>
+          <div className="slideshow-collapse-content">
+            <ul className="equipments-list">
+              {item.equipments.map((equipment, index) => (
+                <li key={index}>{equipment}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );

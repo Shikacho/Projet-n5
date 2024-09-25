@@ -2,6 +2,7 @@ import React from 'react';
 import image from '../assets/section2.png';  
 import Collapse from './Collapse'; 
 
+
 function About() {
   return (
     <div className="about-container">

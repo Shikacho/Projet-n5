@@ -38,16 +38,16 @@
     padding: 0;
     border-radius: 0;
     cursor: pointer;
-    text-decoration: underline; /* Laisse le soulignement visible */
-    text-decoration-color: white; /* Change la couleur du soulignement en blanc */
+    text-decoration: underline; 
+    text-decoration-color: white; 
   
     &:link,
     &:visited,
     &:hover,
     &:active {
-      color: white; /* Garde la couleur blanche dans tous les états */
+      color: white; 
       text-decoration: underline;
-      text-decoration-color: white; /* Soulignement blanc dans tous les états */
+      text-decoration-color: white; 
     }
   }
 }
