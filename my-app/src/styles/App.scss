@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+}
+
 .banner {
   display: flex;
   align-items: center;
@@ -48,7 +55,7 @@
   padding: 40px 0;  
   position: relative;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
   font-family: 'Montserrat', sans-serif;
 
   .footer-logo {
@@ -61,7 +68,6 @@
     font-size: 14px;
   }
 }
-
 
 .about-container {
   text-align: center;
@@ -126,4 +132,12 @@
 .collapse-content p {
   margin: 0;
   color: #333;
+}
+
+
+@media (max-width: 480px) {
+  .footer {
+    width: 100vw;
+    padding: 20px 0;
+  }
 }

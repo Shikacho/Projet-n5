@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/NotFound.scss'; // Assurez-vous d'avoir un fichier SCSS pour styliser cette page
+import '../styles/NotFound.scss'; 
 
 function NotFound() {
   return (
