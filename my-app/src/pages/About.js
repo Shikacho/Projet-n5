@@ -1,6 +1,6 @@
 import React from 'react';
 import image from '../assets/section2.png';  
-import Collapse from './Collapse'; 
+import Collapse from '../components/Collapse'; 
 
 
 function About() {

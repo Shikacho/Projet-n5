@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
-import Card from './Card';
+import Card from '../components/Card';
 import data from '../data/data.json';
 import '../styles/App.scss';
 import image from '../assets/section.png';  
